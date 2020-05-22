@@ -1,2 +1,10 @@
+include ':feature:home'
+include ':data:usecase'
+include ':data:repository'
+include ':data:db'
+include ':data:api'
+include ':model'
+include ':feature'
+include ':data'
 include ':app'
 rootProject.name = "MyRoadMap"

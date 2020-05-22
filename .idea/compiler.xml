@@ -3,6 +3,16 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
       <module name="MyRoadMap.app" target="1.8" />
+      <module name="MyRoadMap.buildSrc" target="1.8" />
+      <module name="MyRoadMap.corecomponent" target="1.8" />
+      <module name="MyRoadMap.data" target="1.8" />
+      <module name="MyRoadMap.data.api" target="1.8" />
+      <module name="MyRoadMap.data.db" target="1.8" />
+      <module name="MyRoadMap.data.repository" target="1.8" />
+      <module name="MyRoadMap.data.usecase" target="1.8" />
+      <module name="MyRoadMap.feature" target="1.8" />
+      <module name="MyRoadMap.feature.home" target="1.8" />
+      <module name="MyRoadMap.model" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
