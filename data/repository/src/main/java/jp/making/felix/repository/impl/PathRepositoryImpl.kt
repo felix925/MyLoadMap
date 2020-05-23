@@ -1,27 +1,44 @@
 package jp.making.felix.repository.impl
 
+import jp.making.felix.androidcomponent.model.PathItem
+import jp.making.felix.db.dao.PathDao
+import jp.making.felix.db.entity.Path
 import jp.making.felix.repository.PathRepository
+import jp.making.felix.repository.mapper.toPathItem
 import kotlinx.coroutines.flow.Flow
-import java.nio.file.Path
+import kotlinx.coroutines.flow.map
 
-class PathRepositoryImpl(
-    private val pathRepository: PathRepository
-): PathRepository {
+@ExperimentalStdlibApi
+class pathRepositoryImpl(
+    private val pathDao: PathDao
+) : PathRepository {
     override fun insertPath(path: Path) =
-        pathRepository.insertPath(path)
+        pathDao.insertPath(path)
 
     override fun updatePath(path: Path) =
-        pathRepository.updatePath(path)
+        pathDao.updatePath(path)
 
     override fun deletePath(path: Path) =
-        pathRepository.deletePath(path)
+        pathDao.deletePath(path)
 
-    override fun getAllPath(): Flow<List<Path>> =
-        pathRepository.getAllPath()
+    override fun getAllPath(): Flow<List<PathItem>> =
+        pathDao.getAllPath().map { it ->
+            buildList {
+                it.forEach {
+                    this.add(it.toPathItem())
+                }
+            }
+        }
 
-    override fun getPathByParentId(roadId: Int): Flow<List<Path>> =
-        pathRepository.getPathByParentId(roadId)
+    override fun getPathByParentId(roadId: Int): Flow<List<PathItem>> =
+        pathDao.getPathByParentId(roadId).map { it ->
+            buildList {
+                it.forEach {
+                    this.add(it.toPathItem())
+                }
+            }
+        }
 
-    override fun getPathByTitle(pathTitle: String): Path =
-        pathRepository.getPathByTitle(pathTitle)
+    override fun getPathByTitle(pathTitle: String): PathItem? =
+        pathDao.getPathByTitle(pathTitle)?.toPathItem()
 }

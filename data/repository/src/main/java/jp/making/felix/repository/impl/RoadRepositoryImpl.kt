@@ -1,10 +1,14 @@
 package jp.making.felix.repository.impl
 
+import jp.making.felix.androidcomponent.model.RoadItem
 import jp.making.felix.db.dao.RoadDao
 import jp.making.felix.db.entity.Road
 import jp.making.felix.repository.RoadRepository
+import jp.making.felix.repository.mapper.toRoadItem
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 
+@ExperimentalStdlibApi
 class RoadRepositoryImpl(
     private val roadDao: RoadDao
 ) : RoadRepository {
@@ -17,10 +21,17 @@ class RoadRepositoryImpl(
     override fun deleteRoad(road: Road) =
         roadDao.deleteRoad(road)
 
-    override fun getAllRoad(): Flow<List<Road>> =
-        roadDao.getAllRoad()
+    // TODO UseCaseで変換したかったけど、Entityを他のクラスに見せたくないからRepositoryで変換した...
+    override fun getAllRoad(): Flow<List<RoadItem>> =
+        roadDao.getAllRoad().map {
+            buildList {
+                it.forEach {
+                    this.add(it.toRoadItem())
+                }
+            }
+        }
 
-    override fun getRoadById(roadId: Int): Road? =
-        roadDao.getRoadById(roadId)
+    override fun getRoadById(roadId: Int): RoadItem? =
+        roadDao.getRoadById(roadId)?.toRoadItem()
 
 }
