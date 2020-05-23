@@ -10,6 +10,7 @@ plugins {
 apply from: rootProject.file("gradle/common.gradle")
 
 dependencies {
+    implementation project(':corecomponent:androidcomponent')
     implementation project(':feature:home')
     implementation project(':data:api')
     implementation project(':data:db')

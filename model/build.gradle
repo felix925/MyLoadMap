@@ -6,4 +6,5 @@ plugins {
 
 apply from: rootProject.file('gradle/common.gradle')
 dependencies {
+    implementation project(':corecomponent:androidcomponent')
 }
