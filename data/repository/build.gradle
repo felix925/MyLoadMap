@@ -1,3 +1,5 @@
+import dependencies.Dep
+
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
@@ -9,4 +11,7 @@ dependencies {
     implementation project(':corecomponent:androidcomponent')
     implementation project(':data:api')
     implementation project(':data:db')
+    implementation Dep.Room.compiler
+    implementation Dep.Room.coroutine
+    implementation Dep.Room.runtime
 }
