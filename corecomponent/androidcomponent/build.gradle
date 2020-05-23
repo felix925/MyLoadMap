@@ -1,0 +1,16 @@
+import dependencies.Dep
+
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+}
+
+apply from: rootProject.file('gradle/common.gradle')
+dependencies {
+    implementation Dep.Epoxy.databindingSupport
+    implementation Dep.Epoxy.epoxy
+    implementation Dep.Epoxy.processer
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.2.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.2.2'
+}

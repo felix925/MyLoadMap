@@ -1,3 +1,5 @@
+include ':corecomponent:androidcomponent'
+include ':corecomponent'
 include ':feature:home'
 include ':data:usecase'
 include ':data:repository'
