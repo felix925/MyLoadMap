@@ -1,3 +1,5 @@
+import dependencies.Dep
+
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
@@ -8,4 +10,7 @@ apply from: rootProject.file('gradle/common.gradle')
 dependencies {
     implementation project(':corecomponent:androidcomponent')
     implementation project(':data:repository')
+    implementation Dep.Room.compiler
+    implementation Dep.Room.coroutine
+    implementation Dep.Room.runtime
 }
