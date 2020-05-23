@@ -19,4 +19,5 @@ dependencies {
 
     implementation Dep.UI.material
     implementation Dep.UI.constraint
+    implementation Dep.Navigation.fragmentKtx
 }
