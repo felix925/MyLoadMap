@@ -4,8 +4,8 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import jp.making.felix.db.dao.PathDao
 import jp.making.felix.db.dao.RoadDao
-import jp.making.felix.db.entity.Path
-import jp.making.felix.db.entity.Road
+import jp.making.felix.androidcomponent.entity.Path
+import jp.making.felix.androidcomponent.entity.Road
 
 @Database(
     entities = [

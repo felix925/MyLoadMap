@@ -4,13 +4,18 @@ plugins {
     id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
 }
 
 apply from: rootProject.file('gradle/common.gradle')
 dependencies {
     implementation Dep.Epoxy.databindingSupport
     implementation Dep.Epoxy.epoxy
-    implementation Dep.Epoxy.processer
+    kapt Dep.Epoxy.processer
+    //TODO ここからこいつらを排除できるならしたい。
+    implementation Dep.Room.runtime
+    implementation Dep.Room.coroutine
+    implementation Dep.Room.compiler
     implementation 'androidx.navigation:navigation-fragment-ktx:2.2.2'
     implementation 'androidx.navigation:navigation-ui-ktx:2.2.2'
 }

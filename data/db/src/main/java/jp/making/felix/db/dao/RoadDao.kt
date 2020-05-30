@@ -1,7 +1,7 @@
 package jp.making.felix.db.dao
 
 import androidx.room.*
-import jp.making.felix.db.entity.Road
+import jp.making.felix.androidcomponent.entity.Road
 import kotlinx.coroutines.flow.Flow
 
 @Dao

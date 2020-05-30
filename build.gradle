@@ -12,6 +12,7 @@ buildscript {
         classpath Dep.GradlePlugin.gradle
         classpath Dep.GradlePlugin.kotlinGradle
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath Dep.ButterKnife.classpath
     }
 }
 

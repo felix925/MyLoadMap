@@ -1,4 +1,4 @@
-package jp.making.felix.db.entity
+package jp.making.felix.androidcomponent.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

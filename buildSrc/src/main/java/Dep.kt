@@ -16,6 +16,7 @@ object Dep {
         val Navigation = "2.2.1"
         val KotlinCoroutines = "1.3.3"
         val Epoxy = "3.9.0"
+        val ButterKnife = "10.1.0"
     }
 
     object common {
@@ -85,5 +86,10 @@ object Dep {
         val epoxy = "com.airbnb.android:epoxy:${LibraryVersion.Epoxy}"
         val processer = "com.airbnb.android:epoxy-processor:${LibraryVersion.Epoxy}"
         val databindingSupport = "com.airbnb.android:epoxy-databinding:${LibraryVersion.Epoxy}"
+    }
+
+    object ButterKnife {
+        val classpath = "com.jakewharton:butterknife-gradle-plugin:${LibraryVersion.ButterKnife}"
+        val plugin = "com.jakewharton.butterknife"
     }
 }

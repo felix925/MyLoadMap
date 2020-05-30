@@ -4,6 +4,7 @@ plugins {
     id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
 }
 
 apply from: rootProject.file('gradle/common.gradle')
@@ -27,4 +28,8 @@ dependencies {
     implementation Dep.LiveData.lifecycleLiveData
     implementation Dep.LiveData.liveDataCoreKtx
     implementation Dep.LiveData.liveDataKtx
+
+    implementation Dep.Epoxy.epoxy
+    implementation Dep.Epoxy.databindingSupport
+    kapt Dep.Epoxy.processer
 }
